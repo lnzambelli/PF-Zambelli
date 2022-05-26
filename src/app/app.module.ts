@@ -11,7 +11,7 @@ import { StudentFormComponent } from './components/student-form/student-form.com
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { StudentContainerComponent } from './components/student-container/student-container.component';
 import { StudentAbmComponent } from './components/student-abm/student-abm.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { StudentAbmComponent } from './components/student-abm/student-abm.compon
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

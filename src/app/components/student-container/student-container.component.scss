@@ -1,17 +1,10 @@
-.headerContainerStudent{
-    background-color: #f5f5f5;
-    margin-top: 8px;
-    display: flex;
-    justify-content: space-between;
-    padding: 4px;
+.listStudentContainer{
+    margin-top: 16px;
     h1{
-        margin: auto 8px;
+        margin-top: 8px;
+        text-align: center;
+        background-color: aliceblue;
+        padding: 4px 0;
     }
-    button{
-        font-size: 20px;
-        
-        mat-icon{
-            margin: 0 8px;
-        }
-    }
+    
 }

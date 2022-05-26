@@ -1,5 +1,6 @@
 import { Student } from 'src/app/models/student';
 import { Component, Input, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-student-list',
@@ -10,11 +11,12 @@ export class StudentListComponent implements OnInit {
 
   @Input() contentTable!: Student[];
   @Input() headersTable!: string[]; 
+  
 
   constructor() { }
 
   ngOnInit(): void {
-     
+   
   }
 
 }

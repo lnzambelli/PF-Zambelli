@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Student } from 'src/app/models/student';
 
 @Component({
   selector: 'app-student-abm',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-abm.component.scss']
 })
 export class StudentAbmComponent implements OnInit {
+
+  @Input() contentTable!: Student[];
+  @Input() headersTable!: string[]; 
 
   constructor() { }
 

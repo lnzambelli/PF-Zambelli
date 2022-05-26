@@ -1,7 +1,11 @@
-<div class="headerContainerStudent">
-    <h1>Mis Alumnos</h1>
-    <button mat-button><mat-icon>person_add</mat-icon>Nuevo</button>
+<div class="listStudentContainer">
+    <h1>Lista de Alumnos</h1>
+    <app-student-list [contentTable]="arrStudents" [headersTable]="arrHeaders"></app-student-list>
 </div>
 
-<app-student-list [contentTable]="arrStudents" [headersTable]="arrHeaders"></app-student-list>
-<app-student-form></app-student-form>
+<!-- Se muestra solo con permiso admin-->
+<div class="listStudentContainer">
+    <h1>ABM Alumnos</h1>
+    <app-student-abm [contentTable]="arrStudents" [headersTable]="arrHeadersActions"></app-student-abm>
+</div>
+
