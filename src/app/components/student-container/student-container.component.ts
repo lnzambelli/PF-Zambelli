@@ -27,7 +27,6 @@ export class StudentContainerComponent implements OnInit{
   }
 
   onStudentAdd(e:any){
-    console.log(e)
     let index=1;
     if(this.arrStudents.length>0){
       index=this.arrStudents.length+1;
@@ -37,7 +36,7 @@ export class StudentContainerComponent implements OnInit{
       e.id=index;
       this.arrStudents.push(e)
     }
-    console.log(this.arrStudents)
+    this.arrStudents = this.arrStudents.filter(stud => stud.id !== e.index)
   }
 
   onStudentEdit(e:any){

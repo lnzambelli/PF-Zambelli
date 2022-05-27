@@ -24,7 +24,6 @@ export class StudentFormComponent {
   });
 
   onSubmit(): void {
-    this.estaCreando = true;
     this.studentAdded.emit(this.createForm.value)
   }
 }
