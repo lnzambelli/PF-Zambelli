@@ -4,5 +4,5 @@ export interface Student{
     id: number,
     name: string,
     email: string,
-    adminPermission: boolean,
+    adminPermission: string,
 }

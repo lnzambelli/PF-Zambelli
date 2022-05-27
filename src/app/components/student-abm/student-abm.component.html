@@ -1,2 +1,2 @@
-<app-student-form></app-student-form>
-<app-student-list [contentTable]="contentTable" [headersTable]="headersTable"></app-student-list>
+<app-student-form (studentAdded)="onItemAdd($event)"></app-student-form>
+<app-student-list [contentTable]="contentTable" [headersTable]="headersTable" (studentEdit)="onStudentEdit($event)" (studentDelete)="onStudentDelete($event)"></app-student-list>

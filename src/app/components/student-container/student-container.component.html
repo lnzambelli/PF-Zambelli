@@ -6,6 +6,11 @@
 <!-- Se muestra solo con permiso admin-->
 <div class="listStudentContainer">
     <h1>ABM Alumnos</h1>
-    <app-student-abm [contentTable]="arrStudents" [headersTable]="arrHeadersActions"></app-student-abm>
+    <app-student-abm [contentTable]="arrStudents" 
+                    [headersTable]="arrHeadersActions" 
+                    (newStudentAdded)="onStudentAdd($event)"
+                    (newStudentEdit)="onStudentEdit($event)"
+                    (newStudentDelete)="onStudentDelete($event)">
+    </app-student-abm>
 </div>
 

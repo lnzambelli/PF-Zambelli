@@ -1,5 +1,6 @@
 import { Student } from 'src/app/models/student';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { MatTable } from '@angular/material/table';
 
 @Component({
   selector: 'app-student-list',
@@ -11,18 +12,20 @@ export class StudentListComponent implements OnInit {
   @Input() contentTable!: Student[];
   @Input() headersTable!: string[]; 
 
+  @Output() studentDelete = new EventEmitter<Student>();
+  @Output() studentEdit = new EventEmitter<Student>();
+
   constructor() { }
 
   ngOnInit(): void {
-   
   }
 
   deleteStudents(student: Student){
-      console.log(student)
+      this.studentDelete.emit(student)
   }
 
-  editStudents(idStudent: number){
-    console.log(idStudent)
+  editStudents(student: Student){
+    this.studentEdit.emit(student)
   }
 
 }

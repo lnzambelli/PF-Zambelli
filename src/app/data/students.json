@@ -4,19 +4,19 @@
         "id": 1,
         "name": "Luis ",
         "email": "luis@coder.com",
-        "adminPermission": false
+        "adminPermission": "false"
       },
       {
         "id": 2,
         "name": "Nicolas",
         "email": "nicolas@coder.com",
-        "adminPermission": true
+        "adminPermission": "true"
       },
       {
         "id": 3,
         "name": "Jose",
         "email": "jose@coder.com",
-        "adminPermission": false
+        "adminPermission": "false"
       }
     ],
     "headers": [

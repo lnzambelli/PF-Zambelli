@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="contentTable" class=" tableContainer">
+<table mat-table [dataSource]="contentTable" class=" tableContainer" #table>
 
     <ng-container [matColumnDef]="column" *ngFor="let column of headersTable">
        
@@ -8,7 +8,7 @@
         </div>
         <ng-template #myAction>
             <td mat-cell *matCellDef="let element" class="iconsActionContainer" >  
-                <mat-icon class="actionIconsEdit" (click)="editStudents(element.id)">edit</mat-icon>
+                <mat-icon class="actionIconsEdit" (click)="editStudents(element)">edit</mat-icon>
                 <mat-icon class="actionIconsDelete" (click)="deleteStudents(element)">delete</mat-icon>
             </td>
         </ng-template>

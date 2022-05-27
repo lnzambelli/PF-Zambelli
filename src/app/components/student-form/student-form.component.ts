@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Student } from 'src/app/models/student';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -8,6 +9,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class StudentFormComponent {
 
+  @Output() studentAdded = new EventEmitter<Student>(); 
+
   estaCreando: boolean = false;
 
   constructor(private fb: FormBuilder) {
@@ -15,15 +18,13 @@ export class StudentFormComponent {
   }
 
   createForm = this.fb.group({
-    
-    nombre:[null, Validators.required],
+    name:[null, Validators.required],
     email: [null, [Validators.required, Validators.email]],
-    permiso: [null, [Validators.required]],
+    adminPermission: [null, [Validators.required]],
   });
 
   onSubmit(): void {
     this.estaCreando = true;
-    //this.createForm.value
-   
+    this.studentAdded.emit(this.createForm.value)
   }
 }
