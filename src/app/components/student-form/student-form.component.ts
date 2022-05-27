@@ -15,12 +15,11 @@ export class StudentFormComponent {
   }
 
   createForm = this.fb.group({
+    
     nombre:[null, Validators.required],
     email: [null, [Validators.required, Validators.email]],
     permiso: [null, [Validators.required]],
   });
-
-
 
   onSubmit(): void {
     this.estaCreando = true;

@@ -12,6 +12,7 @@ import { StudentListComponent } from './components/student-list/student-list.com
 import { StudentContainerComponent } from './components/student-container/student-container.component';
 import { StudentAbmComponent } from './components/student-abm/student-abm.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     StudentListComponent,
     StudentContainerComponent,
     StudentAbmComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

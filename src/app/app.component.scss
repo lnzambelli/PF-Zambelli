@@ -1,10 +1,12 @@
 .wrapper{
     display:grid;
-    grid-template-rows: 1fr 13fr 1fr;
-    grid-template-columns: 2fr 5fr 3fr;
+    width: 100%;
+    grid-template-rows: 1fr auto 0.5fr ;
+    grid-template-columns: 1fr 4fr ;
     grid-template-areas:
-        "navbar navbar navbar"
-        "sidemenu content content" 
+        "navbar navbar"
+        "sidemenu content"
+        "footer footer"  
 }
 .navbar{
     grid-area:navbar;
@@ -13,5 +15,9 @@
     grid-area:sidemenu;
 }
 .content{
-    grid-area:content;
+    grid-area: content;
+}
+
+.footer{
+    grid-area: footer;
 }

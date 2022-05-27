@@ -8,8 +8,8 @@
         </div>
         <ng-template #myAction>
             <td mat-cell *matCellDef="let element" class="iconsActionContainer" >  
-                <mat-icon class="actionIconsEdit">edit</mat-icon>
-                <mat-icon class="actionIconsDelete">delete</mat-icon>
+                <mat-icon class="actionIconsEdit" (click)="editStudents(element.id)">edit</mat-icon>
+                <mat-icon class="actionIconsDelete" (click)="deleteStudents(element)">delete</mat-icon>
             </td>
         </ng-template>
           
