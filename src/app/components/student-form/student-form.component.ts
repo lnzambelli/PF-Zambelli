@@ -1,6 +1,6 @@
 import { Student } from 'src/app/models/student';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-student-form',
@@ -10,20 +10,40 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class StudentFormComponent {
 
   @Output() studentAdded = new EventEmitter<Student>(); 
+  @Input() studentToEdit!: Student; 
 
   estaCreando: boolean = false;
+  createForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.estaCreando = false;
-  }
 
-  createForm = this.fb.group({
-    name:[null, Validators.required],
-    email: [null, [Validators.required, Validators.email]],
-    adminPermission: [null, [Validators.required]],
-  });
+    this.createForm = this.fb.group({
+      name:['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      adminPermission: ['', [Validators.required]],
+    });
+    if(this.studentToEdit){
+      this.createForm.get('name')?.patchValue(this.studentToEdit.name);
+      this.createForm.get('email')?.patchValue(this.studentToEdit.email);
+      this.createForm.get('adminPermission')?.patchValue(this.studentToEdit.adminPermission);
+    }
+    
+  }
+  
 
   onSubmit(): void {
-    this.studentAdded.emit(this.createForm.value)
+    this.estaCreando = true;
+    if(!this.studentToEdit){
+      this.studentAdded.emit(this.createForm.value)
+    }else{
+      this.createForm.value['id']=this.studentToEdit.id
+      let vendedorEdited=this.createForm.value;
+      this.studentAdded.emit(vendedorEdited)
+    }
+    setTimeout(() => {
+      this.createForm.reset()
+      this.estaCreando = false;
+    }, 1000);
   }
 }

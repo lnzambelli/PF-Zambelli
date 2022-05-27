@@ -9,7 +9,8 @@ import { Student } from 'src/app/models/student';
 export class StudentAbmComponent implements OnInit {
 
   @Input() contentTable!: Student[];
-  @Input() headersTable!: string[]; 
+  @Input() headersTable!: string[];
+  @Input() studentToEdit!: Student; 
 
   @Output() newStudentAdded = new EventEmitter<Student>();
   @Output() newStudentDelete = new EventEmitter<Student>();
@@ -18,6 +19,7 @@ export class StudentAbmComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  
   }
 
   onItemAdd(e:any){

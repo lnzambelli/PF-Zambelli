@@ -7,7 +7,8 @@
 <div class="listStudentContainer">
     <h1>ABM Alumnos</h1>
     <app-student-abm [contentTable]="arrStudents" 
-                    [headersTable]="arrHeadersActions" 
+                    [headersTable]="arrHeadersActions"
+                    [studentToEdit]="studentToEdit" 
                     (newStudentAdded)="onStudentAdd($event)"
                     (newStudentEdit)="onStudentEdit($event)"
                     (newStudentDelete)="onStudentDelete($event)">

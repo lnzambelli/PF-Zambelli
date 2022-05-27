@@ -13,6 +13,7 @@ export class StudentContainerComponent implements OnInit{
   arrStudents: Student[] = [];
   arrHeaders: string[] = [];
   arrHeadersActions: string[] = [];
+  studentToEdit!: Student;
 
   constructor(){}
 
@@ -27,23 +28,31 @@ export class StudentContainerComponent implements OnInit{
   }
 
   onStudentAdd(e:any){
+    console.log(e)
     let index=1;
     if(this.arrStudents.length>0){
-      index=this.arrStudents.length+1;
-      e.id=index;
-      this.arrStudents.push(e);
+      if(!e.id){
+        index=this.arrStudents.length+1;
+        e.id=index;
+        this.arrStudents.push(e);
+      }else{
+        let index=this.arrStudents.findIndex((x:Student)=>x.id===e.id);
+        this.arrStudents[index]=e;
+      }
+      this.arrStudents = this.arrStudents.filter(stud => stud.id !== e.index) 
     }else{
       e.id=index;
       this.arrStudents.push(e)
+      this.arrStudents = this.arrStudents.filter(stud => stud.id !== e.index)
     }
-    this.arrStudents = this.arrStudents.filter(stud => stud.id !== e.index)
+    
   }
 
-  onStudentEdit(e:any){
-    console.log(e)
+  onStudentEdit(e:Student){
+    this.studentToEdit=e;
   }
 
-  onStudentDelete(e:any){
+  onStudentDelete(e:Student){
     this.arrStudents = this.arrStudents.filter(stud => stud.id !== e.id)
   }
 }
