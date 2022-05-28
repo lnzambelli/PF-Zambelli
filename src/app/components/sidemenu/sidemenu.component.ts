@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidemenuComponent implements OnInit {
 
+  nameUsers: string | null =""
+
   constructor() { }
 
   ngOnInit(): void {
+    this.nameUsers = sessionStorage.getItem('user');
   }
 
 }

@@ -1,6 +1,6 @@
 import { Student } from 'src/app/models/student';
 import { Component, OnInit } from '@angular/core';
-import listStudent from './../../data/students.json'
+import listStudent from './../../../assets/students.json'
 
 @Component({
   selector: 'app-student-container',
