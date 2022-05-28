@@ -1,5 +1,5 @@
 import { Student } from 'src/app/models/student';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
   templateUrl: './student-form.component.html',
   styleUrls: ['./student-form.component.scss']
 })
-export class StudentFormComponent {
+export class StudentFormComponent implements OnChanges {
 
   @Output() studentAdded = new EventEmitter<Student>(); 
   @Input() studentToEdit!: Student; 
@@ -23,12 +23,16 @@ export class StudentFormComponent {
       email: ['', [Validators.required, Validators.email]],
       adminPermission: ['', [Validators.required]],
     });
-    if(this.studentToEdit){
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+
+    if(!changes.studentToEdit.firstChange){
       this.createForm.get('name')?.patchValue(this.studentToEdit.name);
       this.createForm.get('email')?.patchValue(this.studentToEdit.email);
       this.createForm.get('adminPermission')?.patchValue(this.studentToEdit.adminPermission);
     }
-    
+ 
   }
   
 

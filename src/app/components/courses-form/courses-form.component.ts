@@ -1,5 +1,5 @@
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Course } from 'src/app/models/course';
 
 @Component({
@@ -7,7 +7,7 @@ import { Course } from 'src/app/models/course';
   templateUrl: './courses-form.component.html',
   styleUrls: ['./courses-form.component.scss']
 })
-export class CoursesFormComponent {
+export class CoursesFormComponent implements OnChanges{
 
   @Output() courseAdded = new EventEmitter<Course>(); 
   @Input() courseToEdit!: Course; 
@@ -29,6 +29,16 @@ export class CoursesFormComponent {
       this.createForm.get('category')?.patchValue(this.courseToEdit.category);
     }
     
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
+    if(!changes.courseToEdit.firstChange){
+      this.createForm.get('name')?.patchValue(this.courseToEdit.name);
+      this.createForm.get('date')?.patchValue(this.courseToEdit.date);
+      this.createForm.get('category')?.patchValue(this.courseToEdit.category);
+    }
+ 
   }
   
 
