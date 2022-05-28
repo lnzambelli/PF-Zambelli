@@ -1,6 +1,7 @@
 import { Student } from 'src/app/models/student';
 import { Component, OnInit } from '@angular/core';
-import listStudent from './../../../assets/students.json'
+import listStudent from './../../../assets/students.json';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-container',
@@ -15,10 +16,13 @@ export class StudentContainerComponent implements OnInit{
   arrHeadersActions: string[] = [];
   studentToEdit!: Student;
 
-  constructor(){}
+  activeRoute: string = ""
+
+  constructor(private router: Router){}
 
   ngOnInit(): void {
       this.getStudents();
+      this.activeRoute = this.router.url;
   }
 
   getStudents(){

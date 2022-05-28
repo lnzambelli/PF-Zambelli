@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ContentComponent } from './components/content/content.component';
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 import { StudentFormComponent } from './components/student-form/student-form.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
@@ -16,12 +15,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CousesContainerComponent } from './components/couses-container/couses-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ContentComponent,
     SidemenuComponent,
     StudentFormComponent,
     StudentListComponent,
@@ -30,7 +29,8 @@ import { LoginComponent } from './pages/login/login.component';
     FooterComponent,
     DashboardComponent,
     LoginFormComponent,
-    LoginComponent
+    LoginComponent,
+    CousesContainerComponent
   ],
   imports: [
     BrowserModule,

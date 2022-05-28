@@ -1,14 +1,13 @@
 <div class="buttonContainer">
-    <!-- info para estudiantes -->
+    <!-- nombre de usuario -->
     <button mat-button class="nameButton">{{nameUsers | uppercase}}</button>
     <!-- info para estudiantes -->
-    <button mat-button>Mis Datos</button>
-    <button mat-button>Mis Cursos</button>
+    <button mat-button [routerLink]="['/misdatos']" disabled="{{nameUsers=='admin'}}">Mis Datos</button>
+    <button mat-button [routerLink]="['/miscursos']" disabled="{{nameUsers=='admin'}}">Mis Cursos</button>
     
     <!-- info para estudiantes -->
-    <button mat-button>Listado de Alumnos</button>
-    <button mat-button>ABM de Alumnos</button>
-    <button mat-button>Listado de Cursos</button>
-    <button mat-button>ABM de Cursos</button>
+    <button mat-button [routerLink]="['/listadoalumnos']" disabled="{{nameUsers=='user'}}">Listado de Alumnos</button>
+    <button mat-button [routerLink]="['/abmalumnos']" disabled="{{nameUsers=='user'}}">ABM de Alumnos</button>
+    <button mat-button [routerLink]="['/listadocursos']" disabled="{{nameUsers=='user'}}">Listado de Cursos</button>
+    <button mat-button [routerLink]="['/abmcursos']" disabled="{{nameUsers=='user'}}">ABM de Cursos</button>
 </div>
-
