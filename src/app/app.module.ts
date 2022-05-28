@@ -15,7 +15,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { LoginComponent } from './pages/login/login.component';
-import { CousesContainerComponent } from './components/couses-container/couses-container.component';
+import { CoursesContainerComponent } from './components/courses-container/courses-container.component';
+import { CoursesAbmComponent } from './components/courses-abm/courses-abm.component';
+import { CoursesFormComponent } from './components/courses-form/courses-form.component';
+import { CoursesListComponent } from './components/courses-list/courses-list.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +34,10 @@ import { CousesContainerComponent } from './components/couses-container/couses-c
     DashboardComponent,
     LoginFormComponent,
     LoginComponent,
-    CousesContainerComponent
+    CoursesContainerComponent,
+    CoursesAbmComponent,
+    CoursesFormComponent,
+    CoursesListComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,36 @@
+<form [formGroup]="createForm" novalidate (ngSubmit)="onSubmit()" class="formCourse">
+    <mat-card >
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Nombre" formControlName="name">
+              <mat-error *ngIf="createForm.controls['name'].hasError('required')">
+                El nombre es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Categoria" formControlName="category">
+                <mat-error *ngIf="createForm.controls['category'].hasError('required')">
+                  La categoria es <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col contentButton">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Fecha Inicio" formControlName="date">
+                    <mat-error *ngIf="createForm.controls['date'].hasError('required')">
+                      La fecha es <strong>requerido</strong>
+                    </mat-error>
+                  </mat-form-field>
+                <mat-card-actions class="full-width">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="createForm.invalid || estaCreando" >Crear</button>
+                    <button mat-raised-button  type="reset">Reset</button>
+                  </mat-card-actions>
+            </div>
+          </div>
+      </mat-card-content>
+    </mat-card>
+</form>

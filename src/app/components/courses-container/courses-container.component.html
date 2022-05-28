@@ -1,0 +1,16 @@
+<div class="listCourseContainer" *ngIf="this.activeRoute=='/listadocursos'">
+    <h1>Listado de Cursos</h1>
+    <app-courses-list [contentTable]="arrCourses" [headersTable]="arrHeaders"></app-courses-list>
+</div>
+
+<!-- Se muestra solo con permiso admin-->
+<div class="listCourseContainer" *ngIf="this.activeRoute=='/abmcursos'">
+    <h1>ABM Cursos</h1>
+    <app-courses-abm [contentTable]="arrCourses" 
+                    [headersTable]="arrHeadersActions"
+                    [courseToEdit]="courseToEdit" 
+                    (newCourseAdded)="onCourseAdd($event)"
+                    (newCourseEdit)="onCourseEdit($event)"
+                    (newCourseDelete)="onCourseDelete($event)">
+    </app-courses-abm>
+</div>

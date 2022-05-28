@@ -1,0 +1,8 @@
+<app-courses-form (courseAdded)="onItemAdd($event)"
+                    [courseToEdit]="courseToEdit">
+</app-courses-form>
+<app-courses-list [contentTable]="contentTable" 
+                    [headersTable]="headersTable" 
+                    (courseEdit)="onCourseEdit($event)" 
+                    (courseDelete)="onCourseDelete($event)">
+</app-courses-list>

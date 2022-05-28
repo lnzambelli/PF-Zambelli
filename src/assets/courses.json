@@ -1,0 +1,28 @@
+{
+    "courses": [
+      {
+        "id": 1,
+        "name": "Desarrollo Web",
+        "category": "programacion",
+        "date": "01/06/2022"
+      },
+      {
+        "id": 2,
+        "name": "Angular",
+        "category": "programacion",
+        "date": "15/06/2022"
+      },
+      {
+        "id": 3,
+        "name": "Power BI",
+        "category": "data",
+        "date": "10/08/2022"
+      }
+    ],
+    "headers": [
+        "id", "name", "category", "date"
+    ],
+    "headersAbm": [
+        "id", "name", "category", "date","actions"
+    ]
+}
