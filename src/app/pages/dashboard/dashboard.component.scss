@@ -1,23 +1,14 @@
-.wrapper{
-    display:grid;
-    width: 100%;
-    grid-template-rows: 1fr auto 0.5fr ;
-    grid-template-columns: 1fr 4fr ;
-    grid-template-areas:
-        "navbar navbar"
-        "sidemenu content"
-        "footer footer"  
-}
-.navbar{
-    grid-area:navbar;
-}
-.sidemenu{
-    grid-area:sidemenu;
-}
-.content{
-    grid-area: content;
+h1{
+    margin-top: 8px;
+    text-align: center;
+    background-color: aliceblue;
+    padding: 4px 0;
 }
 
-.footer{
-    grid-area: footer;
+.imgContainer{
+    width: 100%;
+
+    img{
+        width: 100%;
+    }
 }

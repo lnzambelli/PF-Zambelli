@@ -22,6 +22,7 @@ import { CoursesListComponent } from './components/courses-list/courses-list.com
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
 import { PersonalCoursesComponent } from './components/personal-courses/personal-courses.component';
 import { TitleStyleDirective } from './directives/title-style.directive';
+import { FullnamePipe } from './pipes/fullname.pipe';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { TitleStyleDirective } from './directives/title-style.directive';
     PersonalInformationComponent,
     PersonalCoursesComponent,
     TitleStyleDirective,
+    FullnamePipe,
   ],
   imports: [
     BrowserModule,

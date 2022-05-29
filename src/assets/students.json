@@ -3,32 +3,36 @@
       {
         "id": 1,
         "name": "Luis ",
+        "surname": "apellido",
         "email": "luis@coder.com",
         "adminPermission": "false"
       },
       {
         "id": 2,
         "name": "Nicolas",
+        "surname": "apellido",
         "email": "nicolas@coder.com",
         "adminPermission": "true"
       },
       {
         "id": 3,
         "name": "Jose",
+        "surname": "apellido",
         "email": "jose@coder.com",
         "adminPermission": "false"
       },
       {
         "id": 3,
         "name": "User",
+        "surname": "apellidoUser",
         "email": "usuario@coder.com",
         "adminPermission": "false"
       }
     ],
     "headers": [
-        "id", "name", "email", "adminPermission"
+        "id", "name","surname", "email", "adminPermission"
     ],
     "headersAbm": [
-        "id", "name", "email", "adminPermission","actions"
+        "id", "name","surname", "email", "adminPermission","actions"
     ]
 }

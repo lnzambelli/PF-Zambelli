@@ -20,6 +20,7 @@ export class StudentFormComponent implements OnChanges {
 
     this.createForm = this.fb.group({
       name:['', Validators.required],
+      surname:['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       adminPermission: ['', [Validators.required]],
     });
@@ -28,6 +29,7 @@ export class StudentFormComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if(!changes.studentToEdit.firstChange){
       this.createForm.get('name')?.patchValue(this.studentToEdit.name);
+      this.createForm.get('surname')?.patchValue(this.studentToEdit.name);
       this.createForm.get('email')?.patchValue(this.studentToEdit.email);
       this.createForm.get('adminPermission')?.patchValue(this.studentToEdit.adminPermission);
     }

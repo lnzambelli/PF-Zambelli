@@ -13,12 +13,11 @@ export class PersonalInformationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.arrStudents = listStudent.students;
+    this.arrStudents = listStudent.students 
     this.getStudents()
   }
 
   getStudents(){
-
       if(sessionStorage.getItem('user'))
       this.userActive = this.arrStudents.find(us => us.name.toLowerCase() == sessionStorage.getItem('user'))
   }
