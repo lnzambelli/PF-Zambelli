@@ -32,7 +32,6 @@ export class CoursesFormComponent implements OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes)
     if(!changes.courseToEdit.firstChange){
       this.createForm.get('name')?.patchValue(this.courseToEdit.name);
       this.createForm.get('date')?.patchValue(this.courseToEdit.date);

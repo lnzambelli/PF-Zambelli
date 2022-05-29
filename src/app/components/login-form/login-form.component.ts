@@ -30,10 +30,16 @@ export class LoginFormComponent implements OnInit {
     const password = this.form.value.password;
     
     if (name=='admin'  || name=='user'){
-      this.isLoggedIn=true;
-      this.router.navigate(['/dashboard']);
-      sessionStorage.setItem('user', name);
-      this.snackBar.open(`Ingresando al sistema como ${name}`,'close')
+      const msjLogin = this.snackBar.open(`Esta seguro de ingresar como ${name}`,'si',{duration: 5000});
+      msjLogin.onAction().subscribe(()=>{
+        sessionStorage.setItem('user', name);
+        this.isLoggedIn=true;
+        this.router.navigate(['/dashboard']);
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
+        
+    })
     }else{
       this.isLoggedIn=false;
       this.snackBar.open(`Error: No existe el usuario ingresado`, 'close')

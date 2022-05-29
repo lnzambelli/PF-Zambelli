@@ -2,12 +2,12 @@
     <!-- nombre de usuario -->
     <button mat-button class="nameButton">{{nameUsers | uppercase}}</button>
     <!-- info para estudiantes -->
-    <button mat-button [routerLink]="['/misdatos']" disabled="{{nameUsers=='admin'}}">Mis Datos</button>
-    <button mat-button [routerLink]="['/miscursos']" disabled="{{nameUsers=='admin'}}">Mis Cursos</button>
+    <button mat-button [routerLink]="['/misdatos']" disabled="{{nameUsers=='admin'|| nameUsers==null }}">Mis Datos</button>
+    <button mat-button [routerLink]="['/miscursos']" disabled="{{nameUsers=='admin' || nameUsers==null}}">Mis Cursos</button>
     
     <!-- info para estudiantes -->
-    <button mat-button [routerLink]="['/listadoalumnos']" disabled="{{nameUsers=='user'}}">Listado de Alumnos</button>
-    <button mat-button [routerLink]="['/abmalumnos']" disabled="{{nameUsers=='user'}}">ABM de Alumnos</button>
-    <button mat-button [routerLink]="['/listadocursos']" disabled="{{nameUsers=='user'}}">Listado de Cursos</button>
-    <button mat-button [routerLink]="['/abmcursos']" disabled="{{nameUsers=='user'}}">ABM de Cursos</button>
+    <button mat-button [routerLink]="['/listadoalumnos']" disabled="{{nameUsers=='user' || nameUsers==null}}">Listado de Alumnos</button>
+    <button mat-button [routerLink]="['/abmalumnos']" disabled="{{nameUsers=='user' || nameUsers==null}}">ABM de Alumnos</button>
+    <button mat-button [routerLink]="['/listadocursos']" disabled="{{nameUsers=='user' || nameUsers==null}}">Listado de Cursos</button>
+    <button mat-button [routerLink]="['/abmcursos']" disabled="{{nameUsers=='user'|| nameUsers==null}}">ABM de Cursos</button>
 </div>

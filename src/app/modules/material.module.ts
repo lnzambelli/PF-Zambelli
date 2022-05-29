@@ -13,7 +13,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
-
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [],
@@ -31,7 +31,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatSlideToggleModule,
     MatAutocompleteModule,
     MatSnackBarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatListModule
   ]
 })
 export class MaterialModule { }

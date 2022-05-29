@@ -17,6 +17,12 @@
         "name": "Jose",
         "email": "jose@coder.com",
         "adminPermission": "false"
+      },
+      {
+        "id": 3,
+        "name": "User",
+        "email": "usuario@coder.com",
+        "adminPermission": "false"
       }
     ],
     "headers": [

@@ -19,6 +19,8 @@ import { CoursesContainerComponent } from './components/courses-container/course
 import { CoursesAbmComponent } from './components/courses-abm/courses-abm.component';
 import { CoursesFormComponent } from './components/courses-form/courses-form.component';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
+import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
+import { PersonalCoursesComponent } from './components/personal-courses/personal-courses.component';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { CoursesListComponent } from './components/courses-list/courses-list.com
     CoursesAbmComponent,
     CoursesFormComponent,
     CoursesListComponent,
+    PersonalInformationComponent,
+    PersonalCoursesComponent,
   ],
   imports: [
     BrowserModule,
