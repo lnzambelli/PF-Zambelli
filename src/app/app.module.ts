@@ -21,6 +21,7 @@ import { CoursesFormComponent } from './components/courses-form/courses-form.com
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
 import { PersonalCoursesComponent } from './components/personal-courses/personal-courses.component';
+import { TitleStyleDirective } from './directives/title-style.directive';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { PersonalCoursesComponent } from './components/personal-courses/personal
     CoursesListComponent,
     PersonalInformationComponent,
     PersonalCoursesComponent,
+    TitleStyleDirective,
   ],
   imports: [
     BrowserModule,
