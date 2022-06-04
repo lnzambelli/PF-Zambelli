@@ -1,6 +1,17 @@
+<mat-card class="card">
+    <mat-form-field appearance="standard" class="filtroContainer">
+        <mat-label>Filtrar por nombre</mat-label>
+        <input matInput (keyup)="applicarFiltro($event)" placeholder="Filtro" #input>
+    </mat-form-field>
+    <div >
+        <mat-card class="encontrados" *ngFor="let stud of arrEncontrados">Se encontro el nombre {{stud.name}} en la posicion {{stud.id}}</mat-card>
+    </div>
+   
+</mat-card>
+
 <table mat-table [dataSource]="contentTable" class=" tableContainer" #table>
 
-    <ng-container [matColumnDef]="column" *ngFor="let column of headersTable">
+    <ng-container [matColumnDef]="column" *ngFor="let column of headersTable ">
        
         <th mat-header-cell *matHeaderCellDef> {{column}} </th>
         <div *ngIf="column!=='actions'; else myAction">
@@ -17,4 +28,4 @@
 
     <tr mat-header-row *matHeaderRowDef="headersTable"></tr>
     <tr mat-row *matRowDef="let row; columns: headersTable;"></tr>
-  </table>
+</table>

@@ -1,7 +1,9 @@
 import { Student } from 'src/app/models/student';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import listStudent from './../../../assets/students.json';
 import { Router } from '@angular/router';
+import { StudentsService } from 'src/app/services/students.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-student-container',
@@ -9,16 +11,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./student-container.component.scss']
 })
 
-export class StudentContainerComponent implements OnInit{
+export class StudentContainerComponent implements OnInit, OnDestroy{
 
   arrStudents: Student[] = [];
   arrHeaders: string[] = [];
   arrHeadersActions: string[] = [];
   studentToEdit!: Student;
+  subscriptions!:Subscription;
 
   activeRoute: string = ""
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private studentServices: StudentsService){}
 
   ngOnInit(): void {
       this.getStudents();
@@ -26,13 +29,16 @@ export class StudentContainerComponent implements OnInit{
   }
 
   getStudents(){
-    this.arrStudents = listStudent.students;
+    this.subscriptions=new Subscription();
+    this.subscriptions.add(this.studentServices.getStudents().subscribe(list => this.arrStudents = list))
+  
     this.arrHeaders = listStudent.headers;
     this.arrHeadersActions = listStudent.headersAbm
   }
 
   onStudentAdd(e:any){
-    console.log(e)
+    this.subscriptions.add(this.studentServices.getStudents().subscribe(list => this.arrStudents = list))
+
     let index=1;
     if(this.arrStudents.length>0){
       if(!e.id){
@@ -49,7 +55,7 @@ export class StudentContainerComponent implements OnInit{
       this.arrStudents.push(e)
       this.arrStudents = this.arrStudents.filter(stud => stud.id !== e.index)
     }
-    
+    this.studentServices.studentList = this.arrStudents
   }
 
   onStudentEdit(e:Student){
@@ -57,6 +63,12 @@ export class StudentContainerComponent implements OnInit{
   }
 
   onStudentDelete(e:Student){
+    this.subscriptions.add(this.studentServices.getStudents().subscribe(list => this.arrStudents = list))
     this.arrStudents = this.arrStudents.filter(stud => stud.id !== e.id)
+    this.studentServices.studentList = this.arrStudents;
+  }
+
+  ngOnDestroy(){
+      this.subscriptions.unsubscribe()
   }
 }
