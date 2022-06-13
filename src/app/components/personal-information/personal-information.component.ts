@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from 'src/app/models/student';
+import { Student } from 'src/app/core/models/student';
 import listStudent from './../../../assets/students.json';
 
 @Component({

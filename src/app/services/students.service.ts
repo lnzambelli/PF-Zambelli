@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Student } from '../models/student';
+import { Student } from '../core/models/student';
 import listStudent from './../../assets/students.json';
 
 @Injectable({

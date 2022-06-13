@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Users } from '../models/users';
+import { Users } from '../core/models/users';
 
 
 @Injectable({

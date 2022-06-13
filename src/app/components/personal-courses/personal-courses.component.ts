@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Course } from 'src/app/models/course';
-import { Registered } from 'src/app/models/registered';
+import { Course } from 'src/app/core/models/course';
+import { Registered } from 'src/app/core/models/registered';
 import listCourses from './../../../assets/courses.json';
 
 @Component({

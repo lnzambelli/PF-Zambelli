@@ -1,0 +1,10 @@
+<mat-divider></mat-divider>
+<mat-form-field appearance="fill">
+    <mat-label>Cursos</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let course of listCourses" [value]="course.name">
+        {{course.name}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+<button mat-raised-button color="primary" >Inscribirse</button>

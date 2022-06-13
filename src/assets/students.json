@@ -5,28 +5,32 @@
         "name": "Luis ",
         "surname": "apellido",
         "email": "luis@coder.com",
-        "adminPermission": "false"
+        "adminPermission": "false",
+        "inscriptions": [ "Angular"]
       },
       {
         "id": 2,
         "name": "Nicolas",
         "surname": "apellido",
         "email": "nicolas@coder.com",
-        "adminPermission": "true"
+        "adminPermission": "true",
+        "inscriptions": []
       },
       {
         "id": 3,
         "name": "Jose",
         "surname": "apellido",
         "email": "jose@coder.com",
-        "adminPermission": "false"
+        "adminPermission": "false",
+        "inscriptions": []
       },
       {
         "id": 4,
         "name": "User",
         "surname": "apellidoUser",
         "email": "usuario@coder.com",
-        "adminPermission": "false"
+        "adminPermission": "false",
+        "inscriptions": []
       }
     ],
     "headers": [
